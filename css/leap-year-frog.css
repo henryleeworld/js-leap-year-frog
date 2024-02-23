@@ -1,0 +1,336 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    height: 105vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.calendar {
+    position: relative;
+}
+
+.days {
+    display: grid;
+    text-align: center;
+    gap: 1.5rem 1.5rem;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 3rem;
+}
+.day {
+    position: relative;
+    padding: 3rem 0.8rem 0.5rem 3rem;
+    border: 2px solid #888;
+    color: #888;
+}
+.day > .frog-container {
+    position: absolute;
+    bottom: -1rem;
+    left: -5rem;
+}
+
+.year-input {
+    border: 2px solid #888;
+    outline: transparent;
+    padding: 1rem;
+    color: #666;
+    font-family: inherit;
+    font-size: 3rem;
+    text-align: center;
+    width: 30rem;
+}
+.year-input::placeholder {
+    color: #aaa;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    padding: 3rem 0;
+    gap: 2rem;
+}
+
+form > .frog-container {
+    font-size: 0.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+    width: 10rem;
+}
+
+button {
+    background-color: #888;
+    color: #fff;
+    padding: 1rem;
+    min-width: 7rem;
+    border: none;
+    font-family: inherit;
+    font-size: 3rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #666;
+}
+
+button:hover + .frog-container .frog-eyes::before,
+button:hover + .frog-container .frog-eyes-right::before,
+button:hover + .frog-container .frog-eyes-shine {
+    transform: translate(-0.2rem);
+}
+
+.leap {
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 2rem;
+    font-size: 4rem;
+    color: #888;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.frog-container {
+    position: relative;
+    font-size: 0.9rem;
+    height: 20em;
+    width: 40em;
+    overflow: hidden;
+}
+
+.frog {
+    position: absolute;
+    height: 14em;
+    width: 20em;
+    bottom: -1.5em;
+    left: 0;
+    transform: scaleY(1);
+}
+
+.frog-leg,
+.frog-leg-right {
+    position: absolute;
+    background-color: hsl(78, 71%, 35%);
+    width: 6em;
+    height: 7em;
+    border-radius: 50%;
+    bottom: 0;
+    left: 2em;
+}
+.frog-leg-right {
+    left: 12em;
+}
+
+.frog-foot,
+.frog-foot-right {
+    position: absolute;
+    height: 3.5em;
+    width: 3.5em;
+    bottom: 0;
+    left: 1em;
+    border-radius: 50%;
+    background-color: hsl(78, 71%, 40%);
+    box-shadow: 5em 0 0 hsl(78, 71%, 40%);
+}
+.frog-foot-right {
+    left: 10.5em;
+}
+
+.frog-body {
+    position: absolute;
+    bottom: -0.5em;
+    left: 4.5em;
+    background-color: hsl(78, 61%, 50%);
+    width: 11em;
+    height: 12em;
+    position: absolute;
+    border-radius: 50%;
+}
+.frog-body::after {
+    content: "";
+    position: absolute;
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background-color: hsl(78, 61%, 50%);
+    top: -1.5em;
+    left: -1em;
+    box-shadow: 8em 0 0 hsl(78, 61%, 50%);
+}
+
+.frog-eyes,
+.frog-eyes-right {
+    background-color: #fff;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+    z-index: 10;
+}
+.frog-eyes-right {
+    left: 8em;
+}
+
+.frog-eyes::before,
+.frog-eyes-right::before {
+    content: "";
+    background-color: #000;
+    height: 1.8em;
+    width: 1.8em;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.6em;
+    left: 0.6em;
+}
+.frog-eyes-shine {
+    background-color: #fff;
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 11;
+    top: 0.5em;
+    left: 0.6em;
+}
+
+.frog-nose,
+.frog-nose-right {
+    position: absolute;
+    height: 0.6em;
+    width: 0.6em;
+    border-radius: 50%;
+    background-color: hsl(78, 71%, 35%);
+    z-index: 10;
+    top: 2em;
+    left: 4em;
+}
+.frog-nose-right {
+    left: 6em;
+}
+
+div.frog-spot {
+    position: absolute;
+    height: 1.8em;
+    width: 1.8em;
+    border-radius: 50%;
+    background-color: hsl(78, 68%, 55%);
+    z-index: 8;
+    top: 5em;
+    left: 1em;
+    box-shadow: 4em -1em 0 hsl(78, 68%, 55%), 6em 1em 0 hsl(78, 68%, 55%);
+}
+
+div.frog-spot-small {
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background-color: hsl(78, 68%, 55%);
+    z-index: 8;
+    top: 3.8em;
+    left: 2.5em;
+    box-shadow: 5em -1em 0 hsl(78, 68%, 55%), 1em 2.5em 0 hsl(78, 68%, 55%);
+}
+
+.frog-jump {
+    animation-name: move1, move2;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+}
+
+.frog-inverse-jump {
+    animation-name: move3, move4;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+    transform: translateX(20em) translateY(0em) scaleY(1);
+}
+
+.blink {
+    animation-name: blink;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes move1 {
+    to {
+        transform: translateY(-18em) scaleY(1.4);
+    }
+}
+@keyframes move2 {
+    to {
+        transform: translateX(20em);
+    }
+}
+
+@keyframes move3 {
+    to {
+        transform: translateY(-18em) scaleY(1.4);
+    }
+}
+@keyframes move4 {
+    to {
+        transform: translateX(0em);
+    }
+}
+
+@keyframes blink {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    html {
+        font-size: 30%;
+    }
+    body {
+        height: auto;
+    }
+}

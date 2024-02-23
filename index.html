@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="閏年青蛙" />
+        <meta property="og:description" content="相傳閏年的英文是「Leap Year」，青蛙跳是「Frog Leap」，所以閏年過去就常跟青蛙搭在一起。" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nabla&amp;display=swap" />
+        <link rel="stylesheet" href="css/leap-year-frog.css" />
+        <title>閏年青蛙</title>
+    </head>
+    <body>
+        <main>
+            <form id="yearForm">
+                <input class="year-input" type="number" name="year" min="0" max="4000" id="year" placeholder="請輸入四位數年份..." />
+                <button type="submit" id="year-submit">查詢！</button>
+                <div class="frog-container">
+                    <div class="frog">
+                        <div class="frog-leg"></div>
+                        <div class="frog-leg-right"></div>
+                        <div class="frog-body">
+                            <div class="frog-eyes">
+                                <div class="frog-eyes-shine"></div>
+                            </div>
+                            <div class="frog-eyes-right">
+                                <div class="frog-eyes-shine"></div>
+                            </div>
+                            <div class="frog-nose"></div>
+                            <div class="frog-nose-right"></div>
+                            <div class="frog-spot"></div>
+                            <div class="frog-spot-small"></div>
+                        </div>
+                        <div class="frog-foot"></div>
+                        <div class="frog-foot-right"></div>
+                    </div>
+                </div>
+            </form>
+            <div class="calendar">
+                <div class="days">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day"><span class="active">10</span></div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">
+                        29
+                        <div class="frog-container">
+                            <div id="frog" class="frog">
+                                <div class="frog-leg"></div>
+                                <div class="frog-leg-right"></div>
+                                <div class="frog-body">
+                                    <div id="frogEyeLeft" class="frog-eyes">
+                                        <div class="frog-eyes-shine"></div>
+                                    </div>
+                                    <div id="frogEyeRight" class="frog-eyes-right">
+                                        <div class="frog-eyes-shine"></div>
+                                    </div>
+                                    <div class="frog-nose"></div>
+                                    <div class="frog-nose-right"></div>
+                                    <div class="frog-spot"></div>
+                                    <div class="frog-spot-small"></div>
+                                </div>
+                                <div class="frog-foot"></div>
+                                <div class="frog-foot-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leap hidden">閏年！</div>
+                </div>
+            </div>
+        </main>
+        <script src="js/leap-year-frog.js" defer></script>
+    </body>
+</html>
